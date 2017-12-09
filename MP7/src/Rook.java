@@ -1,7 +1,8 @@
 public class Rook extends Chess{
-    public String name = "Rook";
+    public String name = "Rook        ";
     public Rook(Player play){
         super(play);
+        super.name = this.name;
     }
     // If the move is illegal
     public boolean canMove(Chess[][] board, int x1, int y1, int x2, int y2){

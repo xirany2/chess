@@ -1,7 +1,8 @@
 public class Knight extends Chess {
-    public String name = "Knight";
+    public String name = "Knight      ";
     public Knight(Player play) {
     super(play);
+    super.name = this.name;
     }
     public boolean canMove(Chess[][] board, int x1, int y1, int x2, int y2) {
         if (!super.canMove(board, x1, x2, y1, y2)){
