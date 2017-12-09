@@ -4,6 +4,7 @@ public abstract class Chess {
     public Chess (Player a) {
         this.owner = a;
     }
+    // Cannot attack our own pieces
     public boolean canMove(Chess[][] board, int x1, int y1, int x2, int y2) {
         if (board[x2][y2] == null) {
             return true;
@@ -14,6 +15,7 @@ public abstract class Chess {
         }
         return true;
     }
+    // move a chess
     public static void move(Chess[][] board, int x1, int y1, int x2, int y2) {
         board[x2][y2] = board[x1][y1];
         board[x1][y1] = null;

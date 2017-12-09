@@ -10,19 +10,21 @@ public class Game {
     this.player2 = player2;
     //contruct a board
     }
-    
+    //Test whether we can move a chess
+    //Move the chess
+    //Check the winner
     public boolean move(int x1, int y1, int x2, int y2) { 
         if (!canMove(x1, y1, x2, y2)) {
             return false;
         }
-        board[x1][y1].move(this.board, x1, y1, x2, y2);
+        //这个需要改动
+        board[x1][y1].move(board, x1, y1, x2, y2);
         player2Turn = !player2Turn;
         if (board[x2][y2] instanceof King) {
             winner = (player2Turn)? player2:player1;
         }
         return true;
         }
-
     public boolean canMove(int x1, int y1, int x2, int y2) {
         if (x1 == x2 && y1 == y2) {
             System.out.println("Do not move on the same location!");
@@ -64,20 +66,4 @@ public class Game {
           }
         return true;
         }
-    public boolean checkWhetherAttacked(int x1, int y1) {
-        for (int i = 0; i <= 8; i++) {
-            for (int j = 0; j <= 8; j++) {
-                if (board[i][j] == null) {
-                    continue;
-                }
-                if (player2Turn ^ board[i][j].owner == player1) {
-                    continue;
-                }
-                if (canMove(i, j, x1, y1)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
 }

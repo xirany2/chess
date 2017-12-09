@@ -7,11 +7,13 @@ public class Bishop extends Chess {
         if (!super.canMove(board, x1, y1, x2, y2)){
             return false;
         }
-        if (Math.abs(x2 - x1) != Math.abs(y2 - y1)){
+        // Bishop can move along the diagonals
+        if (Math.abs(x2 -x1) != Math.abs(y2 - y1)){
             return false;
         }
         int betweenx;
         int betweeny;
+        // Bishop cannon leap over pieces
         if ((x2 > x1) && (y2 > y1)){
             betweenx = x1 + 1;
             betweeny = y1 + 1;
