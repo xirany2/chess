@@ -11,14 +11,6 @@ public class King extends Chess {
         if (!super.canMove(board, x1, x2, y1, y2)){
             return false;
         }
-        /*if (!moved 
-        && board[x2][y2] != null
-        && board[x2][y2] instanceOf Rook
-        && board[]) {
-            //杩欒竟鏄笉鏄繕娌″啓瀹�
-            board[x2][y2] = 
-            return true;
-        }*/
         return (Math.abs(x1 - x2) <= 1 && Math.abs(y1 - y2) <= 1);
     }
 }
